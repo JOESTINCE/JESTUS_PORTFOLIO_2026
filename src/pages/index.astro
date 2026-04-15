@@ -94,7 +94,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="hero-orbit hero-orbit-2"></div>
           <div class="hero-orbit hero-orbit-3"></div>
           <div class="hero-image-inner">
-            <img src="public/jestus.jpg" alt="Jestus A - Angular Developer" />
+            <img src="./public/jestus.jpg" alt="Jestus A - Angular Developer" />
           </div>
         </div>
         <div class="tech-badge tech-badge-1">
@@ -548,7 +548,11 @@ import Layout from "../layouts/Layout.astro";
             Whether it's a full-time position, contract work, or just a chat
             about Angular — I'd love to connect!
           </p>
-          <button id="openContactModal" class="btn-primary" style="border:none;font-family:var(--font-sans);font-size:1rem;">
+          <button
+            id="openContactModal"
+            class="btn-primary"
+            style="border:none;font-family:var(--font-sans);font-size:1rem;"
+          >
             <span>Send Me an Email</span>
             <span>→</span>
           </button>
@@ -579,55 +583,86 @@ import Layout from "../layouts/Layout.astro";
       <div class="footer-text">
         <span>Angular Dev</span> · Tamil Nadu, India
       </div>
+    </div>
+
+    <!-- ===== CONTACT MODAL ===== -->
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          id="closeContactModal"
+          aria-label="Close modal">×</button
+        >
+
+        <div class="modal-header">
+          <h3 class="modal-title">
+            Get in <span class="gradient-text">Touch</span>
+          </h3>
+          <p class="modal-subtitle">
+            I'll get back to you securely at jestusjoestince@gmail.com
+          </p>
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="frmName"
+              >Full Name / Company <span class="req">*</span></label
+            >
+            <input
+              type="text"
+              id="frmName"
+              name="name"
+              required
+              placeholder="e.g. Acme Corp Recruiter"
+            />
+            <span class="form-error">Please enter your name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="frmEmail"
+              >Email Address <span class="req">*</span></label
+            >
+            <input
+              type="email"
+              id="frmEmail"
+              name="email"
+              required
+              placeholder="name@company.com"
+            />
+            <span class="form-error">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="frmMessage">Message <span class="req">*</span></label>
+            <textarea
+              id="frmMessage"
+              name="message"
+              rows="4"
+              required
+              placeholder="Tell me about the role or project..."></textarea>
+            <span class="form-error">Message cannot be empty.</span>
+          </div>
+
+          <button type="submit" class="btn-primary modal-submit" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== SNACKBAR ===== -->
+    <div id="snackbar" class="snackbar">
+      <div class="snackbar-icon"></div>
+      <div class="snackbar-msg" id="snackbarMsg">
+        Message sent successfully!
+      </div>
+    </div>
   </footer>
 
-  <!-- ===== CONTACT MODAL ===== -->
-  <div class="modal-overlay" id="contactModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeContactModal" aria-label="Close modal">×</button>
-      
-      <div class="modal-header">
-        <h3 class="modal-title">Get in <span class="gradient-text">Touch</span></h3>
-        <p class="modal-subtitle">I'll get back to you securely at jestusjoestince@gmail.com</p>
-      </div>
-
-      <form id="contactForm" class="contact-form" novalidate>
-        <div class="form-group">
-          <label for="frmName">Full Name / Company <span class="req">*</span></label>
-          <input type="text" id="frmName" name="name" required placeholder="e.g. Acme Corp Recruiter" />
-          <span class="form-error">Please enter your name.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="frmEmail">Email Address <span class="req">*</span></label>
-          <input type="email" id="frmEmail" name="email" required placeholder="name@company.com" />
-          <span class="form-error">Please enter a valid email.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="frmMessage">Message <span class="req">*</span></label>
-          <textarea id="frmMessage" name="message" rows="4" required placeholder="Tell me about the role or project..."></textarea>
-          <span class="form-error">Message cannot be empty.</span>
-        </div>
-
-        <button type="submit" class="btn-primary modal-submit" id="submitBtn">
-          <span class="btn-text">Send Message</span>
-          <span class="btn-loader"></span>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ===== SNACKBAR ===== -->
-  <div id="snackbar" class="snackbar">
-    <div class="snackbar-icon"></div>
-    <div class="snackbar-msg" id="snackbarMsg">Message sent successfully!</div>
-  </div>
-
+  <style>
+    .hero-left {
+      max-width: 600px;
+    }
+  </style>
 </Layout>
-
-<style>
-  .hero-left {
-    max-width: 600px;
-  }
-</style>

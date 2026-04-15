@@ -24,6 +24,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href={import.meta.env.BASE_URL + "favicon.svg"} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>{title}</title>
@@ -307,18 +308,22 @@ const {
         submitBtn?.classList.add("loading");
 
         const formData = new FormData(form);
-        // Web3Forms API Key goes here (User needs to replace this)
-        formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+        // FormSubmit specific options
+        formData.append("_subject", "New Portfolio Message!");
+        formData.append("_captcha", "false"); // prevents captcha redirect
 
         try {
-          const response = await fetch("https://api.web3forms.com/submit", {
+          const response = await fetch("https://formsubmit.co/ajax/jestusjoestince@gmail.com", {
             method: "POST",
+            headers: {
+              'Accept': 'application/json'
+            },
             body: formData,
           });
 
           const data = await response.json();
 
-          if (data.success) {
+          if (data.success || response.ok) {
             showSnackbar("Message sent successfully! I'll be in touch.");
             form.reset();
             setTimeout(() => modal?.classList.remove("open"), 1500);
