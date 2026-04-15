@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="Jestus A — Angular Developer | Full Stack Engineer">
 
+<Layout title="Jestus A — Angular Developer | Full Stack Engineer">
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <a href="#hero" class="nav-logo">Jestus<span>.A</span></a>
@@ -14,11 +14,27 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="#education">Education</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-mobile" id="mobileNav">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#achievements" class="mobile-link">Impact</a>
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
 
   <!-- ===== HERO ===== -->
   <section id="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg">
+      <div class="hero-blob-1"></div>
+      <div class="hero-blob-2"></div>
+    </div>
     <div class="hero-grid"></div>
     <div class="particles-container"></div>
 
@@ -35,7 +51,9 @@ import Layout from '../layouts/Layout.astro';
           &lt; <span class="typed-text">Angular Developer</span> /&gt;
         </p>
         <p class="hero-desc">
-          Angular Developer with <strong>3+ years</strong> of experience crafting scalable, high-performance web applications. Specialized in Angular 18, TypeScript, RxJS, NgRx, and full-stack development.
+          Angular Developer with <strong>3+ years</strong> of experience crafting
+          scalable, high-performance web applications. Specialized in Angular 18,
+          TypeScript, RxJS, NgRx, and full-stack development.
         </p>
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">
@@ -48,15 +66,21 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-num"><span class="counter" data-target="3" data-suffix="+">0</span></div>
+            <div class="stat-num">
+              <span class="counter" data-target="3" data-suffix="+">0</span>
+            </div>
             <div class="stat-label">Years Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><span class="counter" data-target="25" data-suffix="%">0</span></div>
+            <div class="stat-num">
+              <span class="counter" data-target="25" data-suffix="%">0</span>
+            </div>
             <div class="stat-label">Bundle Reduction</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><span class="counter" data-target="30" data-suffix="%">0</span></div>
+            <div class="stat-num">
+              <span class="counter" data-target="30" data-suffix="%">0</span>
+            </div>
             <div class="stat-label">API Speed Boost</div>
           </div>
         </div>
@@ -70,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="hero-orbit hero-orbit-2"></div>
           <div class="hero-orbit hero-orbit-3"></div>
           <div class="hero-image-inner">
-            <img src={import.meta.env.BASE_URL + "jestus.jpg"} alt="Jestus A - Angular Developer" />
+            <img src="public/jestus.jpg" alt="Jestus A - Angular Developer" />
           </div>
         </div>
         <div class="tech-badge tech-badge-1">
@@ -89,79 +113,137 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- scroll indicator -->
-    <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.4;animation:float 2s ease-in-out infinite;">
-      <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--text-muted);">SCROLL</span>
-      <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--accent-cyan),transparent);"></div>
+    <div
+      style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.45;animation:float-y 2.5s ease-in-out infinite;"
+    >
+      <span
+        style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;color:var(--text-muted);"
+        >SCROLL</span
+      >
+      <div
+        style="width:1px;height:38px;background:linear-gradient(to bottom,var(--accent-coral),transparent);"
+      >
+      </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
+  <!-- ===== ABOUT =====
+       Pattern: label drops from top · title slides from LEFT · text slides from LEFT
+                achievement cards slide from RIGHT with stagger
+  -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div>
-          <div class="section-label reveal">Professional Summary</div>
-          <h2 class="section-title reveal delay-100">
+          <div class="section-label reveal-down">Professional Summary</div>
+          <h2 class="section-title reveal-left delay-100">
             Building the Web,<br />
             <span class="gradient-text">One Component</span> at a Time
           </h2>
-          <div class="reveal delay-200">
-            <p class="about-text" style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;">
-              Angular Developer with <span style="color:var(--accent-cyan);font-weight:600;">3+ years</span> of experience building scalable, high-performance web applications using Angular 18, TypeScript, RxJS, and NgRx. Strong expertise in UI development, component architecture, lazy loading, standalone components, and state management.
+          <div class="reveal-left delay-200">
+            <p
+              class="about-text"
+              style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;"
+            >
+              Angular Developer with <span
+                style="color:var(--accent-coral);font-weight:600;"
+                >3+ years</span
+              > of experience building scalable, high-performance web applications
+              using Angular 18, TypeScript, RxJS, and NgRx. Strong expertise in UI
+              development, component architecture, lazy loading, standalone components,
+              and state management.
             </p>
-            <p class="about-text" style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;">
-              Also experienced in backend development using <span style="color:var(--accent-purple);font-weight:600;">Node.js, Express, and PostgreSQL</span>, building scalable REST and GraphQL APIs with improved performance and reliability.
+            <p
+              class="about-text"
+              style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;"
+            >
+              Also experienced in backend development using <span
+                style="color:var(--accent-indigo);font-weight:600;"
+                >Node.js, Express, and PostgreSQL</span
+              >, building scalable REST and GraphQL APIs with improved
+              performance and reliability.
             </p>
-            <p class="about-text" style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;">
-              Skilled in developing a <span style="color:var(--accent-pink);font-weight:600;">multi-tenant SaaS eCommerce platform (Zenbasket)</span> and delivering end-to-end full-stack solutions in Agile environments.
+            <p
+              class="about-text"
+              style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;"
+            >
+              Skilled in developing a <span
+                style="color:var(--accent-sage);font-weight:600;"
+                >multi-tenant SaaS eCommerce platform (Zenbasket)</span
+              > and delivering end-to-end full-stack solutions in Agile environments.
             </p>
             <div class="about-highlight" style="margin-top:2rem;">
-              <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">
-                📍 <strong>Tamil Nadu, India</strong> &nbsp;|&nbsp; 💼 Currently at <strong>Centizen Inc.</strong> &nbsp;|&nbsp; 🎓 <strong>B.E. Computer Science, CGPA: 8.5</strong>
+              <p
+                style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;"
+              >
+                📍 <strong>Tamil Nadu, India</strong> &nbsp;|&nbsp; 💼 Currently at
+                <strong>Centizen Inc.</strong> &nbsp;|&nbsp; 🎓 <strong
+                  >B.E. Computer Science, CGPA: 8.5</strong
+                >
               </p>
             </div>
           </div>
         </div>
 
+        <!-- Cards slide in from RIGHT -->
         <div class="about-achievements">
-          <div class="achievement-card reveal delay-200">
+          <div class="achievement-card reveal-right delay-100">
             <div class="achievement-icon">🚀</div>
             <div class="achievement-num">25%</div>
-            <div class="achievement-desc">Reduced Angular bundle size in Zenbasket using lazy loading and standalone components</div>
+            <div class="achievement-desc">
+              Reduced Angular bundle size in Zenbasket using lazy loading and
+              standalone components
+            </div>
           </div>
-          <div class="achievement-card reveal delay-300">
+          <div class="achievement-card reveal-right delay-200">
             <div class="achievement-icon">⚡</div>
             <div class="achievement-num">30%</div>
-            <div class="achievement-desc">Improved API response time via Node.js/PostgreSQL optimization and indexing</div>
+            <div class="achievement-desc">
+              Improved API response time via Node.js/PostgreSQL optimization and
+              indexing
+            </div>
           </div>
-          <div class="achievement-card reveal delay-400">
+          <div class="achievement-card reveal-right delay-300">
             <div class="achievement-icon">🏗️</div>
             <div class="achievement-num">Multi-tenant</div>
-            <div class="achievement-desc">Built & scaled Zenbasket SaaS eCommerce supporting multiple storefronts with Angular 18</div>
+            <div class="achievement-desc">
+              Built &amp; scaled Zenbasket SaaS eCommerce supporting multiple
+              storefronts with Angular 18
+            </div>
           </div>
-          <div class="achievement-card reveal delay-500">
+          <div class="achievement-card reveal-right delay-400">
             <div class="achievement-icon">🔄</div>
             <div class="achievement-num">NgRx</div>
-            <div class="achievement-desc">Implemented scalable state management across modules, improving application stability</div>
+            <div class="achievement-desc">
+              Implemented scalable state management across modules, improving
+              application stability
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
+  <!-- ===== SKILLS =====
+       Pattern: label from top · title fades up (default) · cards ROTATE in with stagger
+  -->
   <section id="skills">
     <div class="container">
-      <div class="section-label reveal">Technical Arsenal</div>
+      <div class="section-label reveal-down">Technical Arsenal</div>
       <h2 class="section-title reveal delay-100">
         Skills &amp; <span class="gradient-text">Technologies</span>
       </h2>
-      <p class="reveal delay-200" style="color:var(--text-secondary);max-width:550px;line-height:1.8;margin-bottom:3rem;">
-        A curated set of technologies I use to build fast, scalable, and maintainable applications — from pixel-perfect UIs to robust backend systems.
+      <p
+        class="reveal delay-200"
+        style="color:var(--text-secondary);max-width:550px;line-height:1.8;margin-bottom:3rem;"
+      >
+        A curated set of technologies I use to build fast, scalable, and
+        maintainable applications — from pixel-perfect UIs to robust backend
+        systems.
       </p>
 
       <div class="skills-container">
-        <div class="skill-category reveal delay-100">
+        <div class="skill-category reveal-rotate delay-100">
           <div class="skill-category-title">⚡ Frontend</div>
           <div class="skill-tags">
             <span class="skill-tag cyan">Angular 18</span>
@@ -176,7 +258,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="skill-category reveal delay-200">
+        <div class="skill-category reveal-rotate delay-200">
           <div class="skill-category-title">🛠️ Backend</div>
           <div class="skill-tags">
             <span class="skill-tag purple">Node.js</span>
@@ -187,7 +269,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="skill-category reveal delay-300">
+        <div class="skill-category reveal-rotate delay-300">
           <div class="skill-category-title">🗄️ Databases</div>
           <div class="skill-tags">
             <span class="skill-tag pink">PostgreSQL</span>
@@ -196,8 +278,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="skill-category reveal delay-400">
-          <div class="skill-category-title">🧰 Tools & Core</div>
+        <div class="skill-category reveal-rotate delay-400">
+          <div class="skill-category-title">🧰 Tools &amp; Core</div>
           <div class="skill-tags">
             <span class="skill-tag blue">Git</span>
             <span class="skill-tag blue">GitLab</span>
@@ -213,16 +295,18 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
+  <!-- ===== EXPERIENCE =====
+       Pattern: label from RIGHT · title from RIGHT · timeline items from LEFT
+  -->
   <section id="experience">
     <div class="container">
-      <div class="section-label reveal">Work History</div>
-      <h2 class="section-title reveal delay-100">
+      <div class="section-label reveal-right">Work History</div>
+      <h2 class="section-title reveal-right delay-100">
         Professional <span class="gradient-text">Experience</span>
       </h2>
 
       <div class="timeline">
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal-left">
           <div class="timeline-dot active"></div>
           <div class="exp-header">
             <div class="exp-role">Software Engineer — Angular Developer</div>
@@ -230,76 +314,145 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="exp-company">Centizen Inc.</div>
           <div class="exp-location">📍 Tirunelveli, Tamil Nadu</div>
-          <div class="exp-project-title">▶ Zenbasket — Multi-Tenant SaaS eCommerce Platform</div>
+          <div class="exp-project-title">
+            ▶ Zenbasket — Multi-Tenant SaaS eCommerce Platform
+          </div>
           <ul class="exp-bullets">
-            <li>Built and scaled a multi-tenant SaaS eCommerce platform using <strong>Angular 18</strong>, Nx monorepo, Standalone Components, and lazy loading, reducing bundle size by <span style="color:var(--accent-cyan);">25%</span> and improving overall application performance</li>
-            <li>Developed advanced add-on features including customer data import/export and multiple authentication methods (classic login and passwordless login), enhancing admin efficiency and user experience</li>
-            <li>Integrated third-party shipping providers, enabling seamless order fulfillment and improving operational efficiency</li>
-            <li>Integrated <strong>WhatsApp marketing automation</strong> for product promotions and offers, increasing customer engagement and sales conversions</li>
-            <li>Designed and implemented <strong>multi-language support</strong> across admin and storefront applications using reusable component architecture, enabling expansion into diverse regional markets</li>
-            <li>Built real-time user engagement features including visitor count, sales notifications, cart activity, and wishlist tracking, improving user interaction and conversion rates</li>
-            <li>Managed complex application state using <strong>RxJS and NgRx</strong>, improving state predictability and reducing UI-related issues across modules</li>
-            <li>Integrated REST and GraphQL APIs using <strong>RxJS and Apollo Client</strong> for efficient reactive data handling</li>
-            <li>Developed and optimized backend services using <strong>Node.js, Express, and PostgreSQL</strong>, building scalable REST APIs and improving response time by <span style="color:var(--accent-cyan);">30%</span> through query optimization and indexing</li>
-            <li>Designed and maintained <strong>PostgreSQL database schemas</strong>, ensuring efficient data handling and scalability</li>
-            <li>Maintained high code quality through unit testing using <strong>Jest</strong></li>
-            <li>Collaborated in an Agile environment, participating in sprint planning, code reviews, and production releases — progressing from intern to full-time Angular developer</li>
+            <li>
+              Built and scaled a multi-tenant SaaS eCommerce platform using <strong
+                >Angular 18</strong
+              >, Nx monorepo, Standalone Components, and lazy loading, reducing
+              bundle size by <span style="color:var(--accent-coral);">25%</span> and
+              improving overall application performance
+            </li>
+            <li>
+              Developed advanced add-on features including customer data
+              import/export and multiple authentication methods (classic login
+              and passwordless login), enhancing admin efficiency and user
+              experience
+            </li>
+            <li>
+              Integrated third-party shipping providers, enabling seamless order
+              fulfillment and improving operational efficiency
+            </li>
+            <li>
+              Integrated <strong>WhatsApp marketing automation</strong> for product
+              promotions and offers, increasing customer engagement and sales conversions
+            </li>
+            <li>
+              Designed and implemented <strong>multi-language support</strong> across
+              admin and storefront applications using reusable component architecture,
+              enabling expansion into diverse regional markets
+            </li>
+            <li>
+              Built real-time user engagement features including visitor count,
+              sales notifications, cart activity, and wishlist tracking,
+              improving user interaction and conversion rates
+            </li>
+            <li>
+              Managed complex application state using <strong
+                >RxJS and NgRx</strong
+              >, improving state predictability and reducing UI-related issues
+              across modules
+            </li>
+            <li>
+              Integrated REST and GraphQL APIs using <strong
+                >RxJS and Apollo Client</strong
+              > for efficient reactive data handling
+            </li>
+            <li>
+              Developed and optimized backend services using <strong
+                >Node.js, Express, and PostgreSQL</strong
+              >, building scalable REST APIs and improving response time by <span
+                style="color:var(--accent-coral);">30%</span
+              > through query optimization and indexing
+            </li>
+            <li>
+              Designed and maintained <strong
+                >PostgreSQL database schemas</strong
+              >, ensuring efficient data handling and scalability
+            </li>
+            <li>
+              Maintained high code quality through unit testing using <strong
+                >Jest</strong
+              >
+            </li>
+            <li>
+              Collaborated in an Agile environment, participating in sprint
+              planning, code reviews, and production releases — progressing from
+              intern to full-time Angular developer
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== KEY ACHIEVEMENTS ===== -->
+  <!-- ===== KEY ACHIEVEMENTS =====
+       Pattern: label from LEFT · title from LEFT · cards BLUR in with stagger
+  -->
   <section id="achievements">
     <div class="container">
-      <div class="section-label reveal">Measurable Impact</div>
-      <h2 class="section-title reveal delay-100">
+      <div class="section-label reveal-left">Measurable Impact</div>
+      <h2 class="section-title reveal-left delay-100">
         Key <span class="gradient-text">Achievements</span>
       </h2>
 
       <div class="achievements-grid">
-        <div class="achievement-item reveal delay-100">
+        <div class="achievement-item reveal-blur delay-100">
           <div class="achievement-number">25%</div>
           <div class="achievement-text">
-            Reduced Angular application bundle size in the <strong>Zenbasket platform</strong> using lazy loading, standalone components, and module refactoring
+            Reduced Angular application bundle size in the <strong
+              >Zenbasket platform</strong
+            > using lazy loading, standalone components, and module refactoring
           </div>
         </div>
-        <div class="achievement-item reveal delay-200">
+        <div class="achievement-item reveal-blur delay-200">
           <div class="achievement-number">SaaS</div>
           <div class="achievement-text">
-            Built and scaled a <strong>multi-tenant SaaS eCommerce platform (Zenbasket)</strong> supporting multiple storefronts using Angular 18
+            Built and scaled a <strong
+              >multi-tenant SaaS eCommerce platform (Zenbasket)</strong
+            > supporting multiple storefronts using Angular 18
           </div>
         </div>
-        <div class="achievement-item reveal delay-300">
+        <div class="achievement-item reveal-blur delay-300">
           <div class="achievement-number">30%</div>
           <div class="achievement-text">
-            Improved API response time by developing and optimizing backend services using <strong>Node.js and PostgreSQL</strong> with efficient query optimization and indexing
+            Improved API response time by developing and optimizing backend
+            services using <strong>Node.js and PostgreSQL</strong> with efficient
+            query optimization and indexing
           </div>
         </div>
-        <div class="achievement-item reveal delay-400">
+        <div class="achievement-item reveal-blur delay-400">
           <div class="achievement-number">RxJS</div>
           <div class="achievement-text">
-            Implemented scalable state management using <strong>RxJS and NgRx</strong> across multiple modules, improving application stability and reducing UI-related issues
+            Implemented scalable state management using <strong
+              >RxJS and NgRx</strong
+            > across multiple modules, improving application stability and reducing
+            UI-related issues
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EDUCATION ===== -->
+  <!-- ===== EDUCATION =====
+       Pattern: label drops from top · title scales up · cards SCALE in
+  -->
   <section id="education">
     <div class="container">
-      <div class="section-label reveal">Academic Background</div>
-      <h2 class="section-title reveal delay-100">
+      <div class="section-label reveal-down">Academic Background</div>
+      <h2 class="section-title reveal-scale delay-100">
         <span class="gradient-text">Education</span>
       </h2>
 
       <div class="education-grid">
-        <div class="edu-card reveal delay-100">
+        <div class="edu-card reveal-scale delay-200">
           <div class="edu-level">🎓 Bachelor of Engineering</div>
           <div class="edu-degree">Computer Science and Engineering</div>
-          <div class="edu-school">Anna University Regional Campus, Tirunelveli, Tamil Nadu</div>
+          <div class="edu-school">
+            Anna University Regional Campus, Tirunelveli, Tamil Nadu
+          </div>
           <div class="edu-meta">
             <div class="edu-meta-item">
               📅 <span>2019 – 2023</span>
@@ -313,10 +466,12 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="edu-card reveal delay-200">
+        <div class="edu-card reveal-scale delay-300">
           <div class="edu-level">📚 Higher Secondary Education</div>
           <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
-          <div class="edu-school">Rose Mary Matric Hr Sec School, Tirunelveli, Tamil Nadu</div>
+          <div class="edu-school">
+            Rose Mary Matric Hr Sec School, Tirunelveli, Tamil Nadu
+          </div>
           <div class="edu-meta">
             <div class="edu-meta-item">
               📅 <span>2019</span>
@@ -327,39 +482,57 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- ===== CONTACT =====
+       Pattern: label from RIGHT · title from RIGHT · contact items from LEFT · CTA from RIGHT
+  -->
   <section id="contact">
     <div class="particles-container"></div>
     <div class="container" style="position:relative;z-index:2;">
-      <div class="section-label reveal">Let's Connect</div>
-      <h2 class="section-title reveal delay-100">
+      <div class="section-label reveal-right">Let's Connect</div>
+      <h2 class="section-title reveal-right delay-100">
         Get in <span class="gradient-text">Touch</span>
       </h2>
 
       <div class="contact-wrapper">
         <div class="contact-info">
-          <a href="tel:+919487586961" class="contact-item reveal delay-100">
+          <a
+            href="tel:+919487586961"
+            class="contact-item reveal-left delay-100"
+          >
             <div class="contact-icon">📞</div>
             <div>
               <div class="contact-label">Phone</div>
               <div class="contact-value">+91 9487586961</div>
             </div>
           </a>
-          <a href="mailto:jestusjoestince@gmail.com" class="contact-item reveal delay-200">
+          <a
+            href="mailto:jestusjoestince@gmail.com"
+            class="contact-item reveal-left delay-200"
+          >
             <div class="contact-icon">✉️</div>
             <div>
               <div class="contact-label">Email</div>
               <div class="contact-value">jestusjoestince@gmail.com</div>
             </div>
           </a>
-          <a href="https://linkedin.com/in/jestus-a-2a75b1249" target="_blank" rel="noopener" class="contact-item reveal delay-300">
+          <a
+            href="https://linkedin.com/in/jestus-a-2a75b1249"
+            target="_blank"
+            rel="noopener"
+            class="contact-item reveal-left delay-300"
+          >
             <div class="contact-icon">💼</div>
             <div>
               <div class="contact-label">LinkedIn</div>
-              <div class="contact-value">linkedin.com/in/jestus-a-2a75b1249</div>
+              <div class="contact-value">
+                linkedin.com/in/jestus-a-2a75b1249
+              </div>
             </div>
           </a>
-          <div class="contact-item reveal delay-400" style="cursor:default;">
+          <div
+            class="contact-item reveal-left delay-400"
+            style="cursor:default;"
+          >
             <div class="contact-icon">📍</div>
             <div>
               <div class="contact-label">Location</div>
@@ -368,18 +541,25 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="contact-cta reveal-scale delay-200">
+        <div class="contact-cta reveal-right delay-200">
           <h3>Open to <span class="gradient-text">New Opportunities</span></h3>
           <p>
-            I'm always excited about interesting projects and challenging roles. Whether it's a full-time position, contract work, or just a chat about Angular — I'd love to connect!
+            I'm always excited about interesting projects and challenging roles.
+            Whether it's a full-time position, contract work, or just a chat
+            about Angular — I'd love to connect!
           </p>
-          <a href="mailto:jestusjoestince@gmail.com" class="btn-primary">
+          <button id="openContactModal" class="btn-primary" style="border:none;font-family:var(--font-sans);font-size:1rem;">
             <span>Send Me an Email</span>
             <span>→</span>
-          </a>
-          <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border-subtle);">
-            <p style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">
-              Currently at Centizen Inc. &nbsp;|&nbsp; Angular 18 · TypeScript · RxJS · NgRx · Node.js
+          </button>
+          <div
+            style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border-subtle);"
+          >
+            <p
+              style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);"
+            >
+              Currently at Centizen Inc. &nbsp;|&nbsp; Angular 18 · TypeScript ·
+              RxJS · NgRx · Node.js
             </p>
           </div>
         </div>
@@ -399,34 +579,55 @@ import Layout from '../layouts/Layout.astro';
       <div class="footer-text">
         <span>Angular Dev</span> · Tamil Nadu, India
       </div>
-    </div>
   </footer>
+
+  <!-- ===== CONTACT MODAL ===== -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeContactModal" aria-label="Close modal">×</button>
+      
+      <div class="modal-header">
+        <h3 class="modal-title">Get in <span class="gradient-text">Touch</span></h3>
+        <p class="modal-subtitle">I'll get back to you securely at jestusjoestince@gmail.com</p>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="frmName">Full Name / Company <span class="req">*</span></label>
+          <input type="text" id="frmName" name="name" required placeholder="e.g. Acme Corp Recruiter" />
+          <span class="form-error">Please enter your name.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="frmEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="frmEmail" name="email" required placeholder="name@company.com" />
+          <span class="form-error">Please enter a valid email.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="frmMessage">Message <span class="req">*</span></label>
+          <textarea id="frmMessage" name="message" rows="4" required placeholder="Tell me about the role or project..."></textarea>
+          <span class="form-error">Message cannot be empty.</span>
+        </div>
+
+        <button type="submit" class="btn-primary modal-submit" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loader"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== SNACKBAR ===== -->
+  <div id="snackbar" class="snackbar">
+    <div class="snackbar-icon"></div>
+    <div class="snackbar-msg" id="snackbarMsg">Message sent successfully!</div>
+  </div>
 
 </Layout>
 
 <style>
-  /* Page-level overrides and extra effects */
-  .hero-left { max-width: 600px; }
-
-  /* Glitch title effect on hover */
-  .hero-name:hover .line2 {
-    position: relative;
-  }
-  .hero-name:hover .line2::before,
-  .hero-name:hover .line2::after {
-    content: "Jestus A";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-  }
-  .hero-name:hover .line2::before {
-    color: var(--accent-cyan);
-    animation: glitch 0.3s infinite;
-    clip-path: inset(0 0 50% 0);
-  }
-  .hero-name:hover .line2::after {
-    color: var(--accent-purple);
-    animation: glitch 0.3s infinite reverse;
-    clip-path: inset(50% 0 0 0);
+  .hero-left {
+    max-width: 600px;
   }
 </style>
