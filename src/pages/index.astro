@@ -12,6 +12,7 @@ import Layout from "../layouts/Layout.astro";
       <li><a href="#experience">Experience</a></li>
       <li><a href="#achievements">Impact</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -26,6 +27,7 @@ import Layout from "../layouts/Layout.astro";
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#achievements" class="mobile-link">Impact</a>
     <a href="#education" class="mobile-link">Education</a>
+    <a href="#resume" class="mobile-link">Resume</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
@@ -63,6 +65,13 @@ import Layout from "../layouts/Layout.astro";
           <a href="#contact" class="btn-secondary">
             <span>Get in Touch</span>
           </a>
+          <a
+            href="/JESTUS_PORTFOLIO_2026/Jestus_A_Resume.pdf"
+            download="Jestus_A_Resume.pdf"
+            class="btn-secondary"
+          >
+            <span>Download CV</span>
+          </a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
@@ -94,7 +103,10 @@ import Layout from "../layouts/Layout.astro";
           <div class="hero-orbit hero-orbit-2"></div>
           <div class="hero-orbit hero-orbit-3"></div>
           <div class="hero-image-inner">
-            <img src="./public/jestus.jpg" alt="Jestus A - Angular Developer" />
+            <img
+              src="/JESTUS_PORTFOLIO_2026/jestus.jpg"
+              alt="Jestus A - Angular Developer"
+            />
           </div>
         </div>
         <div class="tech-badge tech-badge-1">
@@ -476,6 +488,53 @@ import Layout from "../layouts/Layout.astro";
             <div class="edu-meta-item">
               📅 <span>2019</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume">
+    <div class="container">
+      <div class="section-label reveal-down">Career Document</div>
+      <h2 class="section-title reveal-scale delay-100">
+        My <span class="gradient-text">Resume</span>
+      </h2>
+
+      <div class="resume-wrapper reveal-scale delay-200">
+        <div class="resume-card">
+          <div class="resume-icon">📄</div>
+          <div class="resume-info">
+            <h3>Full Professional Resume</h3>
+            <p>
+              Looking for a more detailed overview of my career, projects, and
+              technical certifications? Download my complete CV to see how I can
+              bring value to your team.
+            </p>
+            <div class="resume-actions">
+              <a
+                href="/JESTUS_PORTFOLIO_2026/Jestus_A_Resume.pdf"
+                download="Jestus_A_Resume.pdf"
+                class="btn-primary"
+              >
+                <span>Download PDF</span>
+                <span>↓</span>
+              </a>
+              <a
+                href="/JESTUS_PORTFOLIO_2026/Jestus_A_Resume.pdf"
+                target="_blank"
+                class="btn-secondary"
+              >
+                <span>Preview Online</span>
+              </a>
+            </div>
+          </div>
+          <div class="resume-tags">
+            <span class="skill-tag cyan">Angular 18</span>
+            <span class="skill-tag purple">TypeScript</span>
+            <span class="skill-tag pink">Node.js</span>
+            <span class="skill-tag blue">Full Stack</span>
           </div>
         </div>
       </div>
