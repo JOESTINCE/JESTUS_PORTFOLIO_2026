@@ -1618,13 +1618,6 @@ section {
   color: var(--text-primary);
 }
 
-.cta-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 .contact-cta p {
   color: var(--text-secondary);
   margin-bottom: 2rem;
