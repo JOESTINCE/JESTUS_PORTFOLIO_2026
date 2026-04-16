@@ -1563,6 +1563,44 @@ section {
   font-weight: 500;
 }
 
+.copy-btn {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.copy-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: var(--accent-indigo);
+}
+
+.copy-btn .copy-feedback {
+  position: absolute;
+  top: -30px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.copy-btn.copied .copy-feedback {
+  opacity: 1;
+  top: -35px;
+}
+
 .contact-cta {
   padding: 2.5rem;
   background: linear-gradient(135deg, rgba(79, 70, 229, 0.07), rgba(224, 90, 58, 0.05));
@@ -1578,6 +1616,13 @@ section {
   margin-bottom: 1rem;
   line-height: 1.2;
   color: var(--text-primary);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .contact-cta p {

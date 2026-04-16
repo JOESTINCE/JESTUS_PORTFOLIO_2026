@@ -564,16 +564,22 @@ import Layout from "../layouts/Layout.astro";
               <div class="contact-value">+91 9487586961</div>
             </div>
           </a>
-          <a
-            href="mailto:jestusjoestince@gmail.com"
-            class="contact-item reveal-left delay-200"
-          >
+          <div class="contact-item reveal-left delay-200">
             <div class="contact-icon">✉️</div>
-            <div>
+            <div style="flex:1;">
               <div class="contact-label">Email</div>
-              <div class="contact-value">jestusjoestince@gmail.com</div>
+              <div class="contact-value" id="emailValue">jestusjoestince@gmail.com</div>
             </div>
-          </a>
+            <button 
+              class="copy-btn" 
+              id="copyEmail" 
+              title="Copy Email"
+              aria-label="Copy email to clipboard"
+            >
+              <span class="copy-icon">📋</span>
+              <span class="copy-feedback">Copied!</span>
+            </button>
+          </div>
           <a
             href="https://linkedin.com/in/jestus-a-2a75b1249"
             target="_blank"
@@ -607,14 +613,19 @@ import Layout from "../layouts/Layout.astro";
             Whether it's a full-time position, contract work, or just a chat
             about Angular — I'd love to connect!
           </p>
-          <button
-            id="openContactModal"
-            class="btn-primary"
-            style="border:none;font-family:var(--font-sans);font-size:1rem;"
-          >
-            <span>Send Me an Email</span>
-            <span>→</span>
-          </button>
+          <div class="cta-actions">
+            <button
+              id="openContactModal"
+              class="btn-primary"
+              style="border:none;font-family:var(--font-sans);font-size:1rem;"
+            >
+              <span>Send Me an Email</span>
+              <span>→</span>
+            </button>
+            <a href="mailto:jestusjoestince@gmail.com" class="btn-secondary" style="font-size:0.9rem;">
+              <span>Direct Mail</span>
+            </a>
+          </div>
           <div
             style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border-subtle);"
           >
@@ -663,6 +674,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <form id="contactForm" class="contact-form" novalidate>
+          <input type="text" name="_honey" style="display:none" />
+          <input type="hidden" name="_template" value="table" />
           <div class="form-group">
             <label for="frmName"
               >Full Name / Company <span class="req">*</span></label

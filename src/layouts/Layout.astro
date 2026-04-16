@@ -261,6 +261,22 @@ const {
         if (e.target === modal) modal.classList.remove("open");
       });
 
+      // Copy Email Feature
+      const copyBtn = document.getElementById('copyEmail');
+      const emailValue = document.getElementById('emailValue');
+      
+      copyBtn?.addEventListener('click', async () => {
+        const email = emailValue?.textContent || 'jestusjoestince@gmail.com';
+        try {
+          await navigator.clipboard.writeText(email);
+          copyBtn.classList.add('copied');
+          setTimeout(() => copyBtn.classList.remove('copied'), 2000);
+          showSnackbar("Email copied to clipboard!");
+        } catch (err) {
+          showSnackbar("Failed to copy email.", true);
+        }
+      });
+
       // Validation helper
       const validateForm = () => {
         let isValid = true;
@@ -313,7 +329,7 @@ const {
         formData.append("_captcha", "false"); // prevents captcha redirect
 
         try {
-          const response = await fetch("https://formsubmit.co/ajax/jestusjoestince@gmail.com", {
+          const response = await fetch("https://formsubmit.co/ajax/5f2aafcb003c96273d44a28f611efcb2", {
             method: "POST",
             headers: {
               'Accept': 'application/json'
