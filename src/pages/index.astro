@@ -54,8 +54,8 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <p class="hero-desc">
           Angular Developer with <strong>3+ years</strong> of experience crafting
-          scalable, high-performance web applications. Specialized in Angular 18,
-          TypeScript, RxJS, NgRx, and full-stack development.
+          scalable, high-performance web applications. Specialized in Angular, TypeScript,
+          JavaScript, RxJS, NgRx, NodeJS, PostgreSQL, ExpressJS, GraphQL and Astro.
         </p>
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">
@@ -75,22 +75,16 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-num">
-              <span class="counter" data-target="3" data-suffix="+">0</span>
-            </div>
-            <div class="stat-label">Years Exp.</div>
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years of Experience</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">
-              <span class="counter" data-target="25" data-suffix="%">0</span>
-            </div>
-            <div class="stat-label">Bundle Reduction</div>
+            <div class="stat-num">Scalable</div>
+            <div class="stat-label">Architecture Design</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">
-              <span class="counter" data-target="30" data-suffix="%">0</span>
-            </div>
-            <div class="stat-label">API Speed Boost</div>
+            <div class="stat-num">Seamless</div>
+            <div class="stat-label">API Integrations</div>
           </div>
         </div>
       </div>
@@ -103,10 +97,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="hero-orbit hero-orbit-2"></div>
           <div class="hero-orbit hero-orbit-3"></div>
           <div class="hero-image-inner">
-            <img
-              src="/jestus.jpg"
-              alt="Jestus A - Angular Developer"
-            />
+            <img src="/jestus.jpg" alt="Jestus A - Angular Developer" />
           </div>
         </div>
         <div class="tech-badge tech-badge-1">
@@ -146,7 +137,7 @@ import Layout from "../layouts/Layout.astro";
   <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div>
+        <div class="about-left">
           <div class="section-label reveal-down">Professional Summary</div>
           <h2 class="section-title reveal-left delay-100">
             Building the Web,<br />
@@ -190,8 +181,8 @@ import Layout from "../layouts/Layout.astro";
               >
                 📍 <strong>Tamil Nadu, India</strong> &nbsp;|&nbsp; 💼 Currently at
                 <strong>Centizen Inc.</strong> &nbsp;|&nbsp; 🎓 <strong
-                  >B.E. Computer Science, CGPA: 8.5</strong
-                >
+                  >B.E. Computer Science, CGPA: 8.5
+                </strong>(with Distinction)
               </p>
             </div>
           </div>
@@ -200,35 +191,45 @@ import Layout from "../layouts/Layout.astro";
         <!-- Cards slide in from RIGHT -->
         <div class="about-achievements">
           <div class="achievement-card reveal-right delay-100">
-            <div class="achievement-icon">🚀</div>
-            <div class="achievement-num">25%</div>
+            <div class="achievement-icon">🔥</div>
+            <div class="achievement-num">3rd-Party Shipment Integration</div>
             <div class="achievement-desc">
-              Reduced Angular bundle size in Zenbasket using lazy loading and
-              standalone components
+              Seamlessly integrated multiple third-party shipping providers into
+              Zenbasket, enabling automated order fulfillment, real-time
+              tracking, and dynamic shipping rate calculation. Improved
+              operational efficiency and reduced manual intervention in
+              logistics workflows.
             </div>
           </div>
           <div class="achievement-card reveal-right delay-200">
             <div class="achievement-icon">⚡</div>
-            <div class="achievement-num">30%</div>
+            <div class="achievement-num">WhatsApp Marketing Integration</div>
             <div class="achievement-desc">
-              Improved API response time via Node.js/PostgreSQL optimization and
-              indexing
+              Built WhatsApp marketing automation features to enable store
+              owners to send personalized campaigns, order updates, and
+              promotional messages. Enhanced customer engagement and
+              significantly improved conversion rates through real-time
+              communication.
             </div>
           </div>
           <div class="achievement-card reveal-right delay-300">
-            <div class="achievement-icon">🏗️</div>
-            <div class="achievement-num">Multi-tenant</div>
+            <div class="achievement-icon">🏢</div>
+            <div class="achievement-num">Multi-Tenant Architecture</div>
             <div class="achievement-desc">
-              Built &amp; scaled Zenbasket SaaS eCommerce supporting multiple
-              storefronts with Angular 18
+              Designed and developed a scalable multi-tenant SaaS architecture
+              supporting multiple independent storefronts. Enabled efficient
+              resource sharing, tenant isolation, and rapid onboarding of new
+              businesses on a single platform.
             </div>
           </div>
           <div class="achievement-card reveal-right delay-400">
-            <div class="achievement-icon">🔄</div>
-            <div class="achievement-num">NgRx</div>
+            <div class="achievement-icon">🔔</div>
+            <div class="achievement-num">Live Notifications</div>
             <div class="achievement-desc">
-              Implemented scalable state management across modules, improving
-              application stability
+              Implemented a real-time notification system for order updates,
+              user activities, and sales events using reactive programming.
+              Improved user engagement by delivering instant updates such as
+              order status, cart activity, and live sales alerts.
             </div>
           </div>
         </div>
@@ -262,6 +263,7 @@ import Layout from "../layouts/Layout.astro";
             <span class="skill-tag cyan">TypeScript</span>
             <span class="skill-tag cyan">RxJS</span>
             <span class="skill-tag cyan">NgRx</span>
+            <span class="skill-tag cyan">Astro</span>
             <span class="skill-tag cyan">Angular Material</span>
             <span class="skill-tag cyan">Angular Signals</span>
             <span class="skill-tag cyan">Standalone Components</span>
@@ -278,6 +280,7 @@ import Layout from "../layouts/Layout.astro";
             <span class="skill-tag purple">REST API</span>
             <span class="skill-tag purple">GraphQL</span>
             <span class="skill-tag purple">Apollo Client</span>
+            <span class="skill-tag purple">JSON-LD</span>
           </div>
         </div>
 
@@ -568,11 +571,13 @@ import Layout from "../layouts/Layout.astro";
             <div class="contact-icon">✉️</div>
             <div style="flex:1;">
               <div class="contact-label">Email</div>
-              <div class="contact-value" id="emailValue">jestusjoestince@gmail.com</div>
+              <div class="contact-value" id="emailValue">
+                jestusjoestince@gmail.com
+              </div>
             </div>
-            <button 
-              class="copy-btn" 
-              id="copyEmail" 
+            <button
+              class="copy-btn"
+              id="copyEmail"
               title="Copy Email"
               aria-label="Copy email to clipboard"
             >
