@@ -2187,6 +2187,13 @@ footer {
   .hero-stats {
     justify-content: center;
     width: 100%;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .stat-num {
+    font-size: 1.4rem;
   }
 
   .stat-item {
@@ -2222,6 +2229,13 @@ footer {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+    text-align: center;
+  }
+
+  .about-left {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .contact-wrapper {
@@ -2235,6 +2249,11 @@ footer {
 
   .nav-hamburger {
     display: flex;
+  }
+
+  .footer-content {
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -2252,5 +2271,26 @@ footer {
   }
 
   .education-grid {
-    grid-template-columns: 1fr;  }
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-role {
+    font-size: 0.9rem;
+  }
+
+  .stat-num {
+    min-height: auto;
+  }
 }

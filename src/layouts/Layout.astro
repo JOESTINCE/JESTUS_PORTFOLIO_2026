@@ -32,18 +32,18 @@ const {
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL("/jestus.jpg", Astro.site)} />
+    <meta property="og:image" content={new URL("/twitter-card-image.png", Astro.site)} />
     <meta
       property="og:image:secure_url"
-      content={new URL("/jestus.jpg", Astro.site)}
+      content={new URL("/twitter-card-image.png", Astro.site)}
     />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="Jestus A - Angular Developer" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Jestus A - Angular Developer Portfolio" />
     <meta property="og:site_name" content="Jestus A Portfolio" />
     <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={Astro.url.href} />
     <meta
       name="twitter:title"
@@ -53,7 +53,7 @@ const {
       name="twitter:description"
       content={description}
     />
-    <meta name="twitter:image" content={new URL("/jestus.jpg", Astro.site)} />
+    <meta name="twitter:image" content={new URL("/twitter-card-image.png", Astro.site)} />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" is:inline>
