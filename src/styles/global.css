@@ -94,6 +94,16 @@ body {
   background: rgba(79, 70, 229, 0.06);
 }
 
+@media (max-width: 1024px) {
+  body {
+    cursor: auto !important;
+  }
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
   width: 4px;
