@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://jestus.in',
   base: '/',
+  trailingSlash: 'never',
   output: 'static',
   integrations: [sitemap()],
 });
